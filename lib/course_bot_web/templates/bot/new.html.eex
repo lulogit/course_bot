@@ -1,0 +1,5 @@
+<h2>New Bot</h2>
+
+<%= render "form.html", Map.put(assigns, :action, bot_path(@conn, :create)) %>
+
+<span><%= link "Back", to: bot_path(@conn, :index) %></span>

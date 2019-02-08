@@ -20,7 +20,7 @@ defmodule CourseBot.Mixfile do
   def application do
     [
       mod: {CourseBot.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :coherence]
     ]
   end
 
@@ -42,7 +42,8 @@ defmodule CourseBot.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
-      {:distillery, "~> 2.0"}
+      {:distillery, "~> 2.0"},
+      {:coherence, "~> 0.5.2"}
     ]
   end
 

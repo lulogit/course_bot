@@ -53,6 +53,6 @@ config :course_bot, CourseBot.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "course_bot_dev",
+  database: "postgres",
   hostname: "localhost",
   pool_size: 10

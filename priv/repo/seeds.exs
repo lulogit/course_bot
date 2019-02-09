@@ -12,6 +12,7 @@
 
 CourseBot.Repo.delete_all CourseBot.Coherence.User
 %CourseBot.Coherence.User{name: "Test User", email: "testuser@example.com", password: "secret", password_confirmation: "secret"}
+|> CourseBot.Coherence.User.changeset
 |> CourseBot.Repo.insert!
 
 CourseBot.Repo.delete_all CourseBot.Chatbots.Bot

@@ -1,0 +1,46 @@
+[main]
+b: Hi! I am course-bot.
+b: ![](https://thumbs.dreamstime.com/z/cartoon-teacher-robot-idea-55524573.jpg)
+b: Who are you ?
+u: Professor
+b: It is a pleasure to meet you.
+b: Would you like to have your course material effortly delivered to your students as an effective chatbot ?
+u: Sure !
+b: Ok. You can first have a tour of the course platform [here](/tour).
+b: Once you will be ready to start you bot course, I will guide you step by step.
+u: I am ready
+b: First of all, you need to register a professor account [here](/register/new)
+u: Done
+b: Then you can see and manage your courses [here](/prof/courses).
+b: Just click on "new" to create your first course.
+u: I have an issue
+b: Someone is going to contact to support you.
+b: In the meanwhile, [here](/faq) you can simply solve the most common doubts.
+b: I am sorry for the inconvenience.
+u: I created the course
+b: Fantastic !
+b: Now you should upload your material, or provide a link to it.
+b: Let's make this step as easy as possible.
+b: Is your material already on a website / cloud storage ?
+u: Yes
+b: Perfect, just give me a link to it, and I will try to import.
+
+[curious]
+#main/0
+u: Just curious
+b: course-bot is a platform where professors can easily deploy their content with an effective chatbot interface, and students can have fun while learning.
+b: Courses adapt to the student, that is supported and motivated by me.
+u: Tell me more
+b: Professors can see realtime statistics of the progresses, collect feedback and effortlessly improve the course. 
+u: What about the technology ?
+b: My wording and the course structure can be easily tuned from an excel sheet, so that everyone can deliver their knowledge in the way they've ever dreamd.
+b: I can run in the browser, or be deployed in the cloud to scale up to millions of users.
+b: Are you interested ?
+u: I want to see your available courses
+b: here you are a list:
+
+[fuck you]
+#main/1
+u: Fuck you !
+b: No, fuck your mother, motherfucker :P
+u: Thanks :)

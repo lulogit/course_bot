@@ -20,6 +20,7 @@ body, form, ul, table {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
+  background-color: #373f52;
 }
 .logo {
   width: 519px;

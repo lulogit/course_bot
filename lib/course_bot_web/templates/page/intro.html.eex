@@ -1,0 +1,44 @@
+	<!-- stylesheets are conveniently separated into components -->
+        <link rel="stylesheet" href="<%= static_path(@conn, "/setup.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/says.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/reply.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/typing.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/input.css") %>">
+	<style>
+	body {
+		background: #dcdde0;
+	}
+	.bubble-container {
+		height: 100vh;
+	}
+        .say img {width: auto !important; height: 12em;}
+        div.bubble.say {width: -moz-fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -ms-fit-content !important;
+    width: -o-fit-content !important;
+    width: fit-content !important;}
+      .bubble-container {background: #fff !important;}
+      div.bubble.say:not(.reply) {background: #f7f9fc; border: 1px solid #d2ddee;}
+      .bubble.reply .bubble-content span.bubble-button, .bubble.reply .bubble-content span.bubble-button.bubble-pick {background: #f7f9fc; border: 1px solid #d2ddee;color: #9768d1;}
+      .bubble.reply:not(.bubble-picked) .bubble-content span.bubble-button:hover {border: 1px solid #9768d1; font-weight: bold; background: ivory;}
+	</style>
+
+<!-- container element for chat window -->
+<div id="chat"></div>
+
+<!-- import the JavaScript file -->
+<script src="<%= static_path(@conn, "/Bubbles.js") %>"></script>
+<script>
+
+
+// this is the most basic conversation JSON.
+  var convo = {"ice": {"says": ["<p>Hi! I am course-bot.</p>", "<p><img alt=\"\" src=\"https://thumbs.dreamstime.com/z/cartoon-teacher-robot-idea-55524573.jpg\" /></p>", "<p>Who are you ?</p>"], "reply": [{"question": "Professor", "answer": "3eccdde0-588c-4287-89e5-ec853b3cdf2f"}, {"question": "Just curious", "answer": "63ebf79f-f2e4-43ac-9b44-62f9dcb8dfe1"}]}, "3eccdde0-588c-4287-89e5-ec853b3cdf2f": {"says": ["<p>It is a pleasure to meet you.</p>", "<p>Would you like to have your course material effortly delivered to your students as an effective chatbot ?</p>"], "reply": [{"question": "Sure !", "answer": "488331d3-cdbc-4659-801b-08e25ebed634"}]}, "488331d3-cdbc-4659-801b-08e25ebed634": {"says": ["<p>Ok. You can first have a tour of the course platform <a href=\"/tour\">here</a>.</p>", "<p>Once you will be ready to start you bot course, I will guide you step by step.</p>"], "reply": [{"question": "I am ready", "answer": "dcc7a05a-eff6-456e-a77d-314ce886e6e6"}]}, "dcc7a05a-eff6-456e-a77d-314ce886e6e6": {"says": ["<p>First of all, you need to register a professor account <a href=\"/register/new\">here</a></p>"], "reply": [{"question": "Done", "answer": "dd69f4f3-f33b-499d-ae55-1927038ab1ec"}]}, "dd69f4f3-f33b-499d-ae55-1927038ab1ec": {"says": ["<p>Then you can see and manage your courses <a href=\"/prof/courses\">here</a>.</p>", "<p>Just click on \"new\" to create your first course.</p>"], "reply": [{"question": "I have an issue", "answer": "79807dfa-9cf8-4d0b-90a1-ee2cad0da68b"}]}, "79807dfa-9cf8-4d0b-90a1-ee2cad0da68b": {"says": ["<p>Someone is going to contact to support you.</p>", "<p>In the meanwhile, <a href=\"/faq\">here</a> you can simply solve the most common doubts.</p>", "<p>I am sorry for the inconvenience.</p>"], "reply": [{"question": "I created the course", "answer": "3a3d83dd-76e5-4447-9a7c-9e112448c7eb"}]}, "3a3d83dd-76e5-4447-9a7c-9e112448c7eb": {"says": ["<p>Fantastic !</p>", "<p>Now you should upload your material, or provide a link to it.</p>", "<p>Let's make this step as easy as possible.</p>", "<p>Is your material already on a website / cloud storage ?</p>"], "reply": [{"question": "Yes", "answer": "a028d20f-7a26-4925-85b7-225dcdf2c9a0"}]}, "a028d20f-7a26-4925-85b7-225dcdf2c9a0": {"says": ["<p>Perfect, just give me a link to it, and I will try to import.</p>"], "reply": []}, "63ebf79f-f2e4-43ac-9b44-62f9dcb8dfe1": {"says": ["<p>course-bot is a platform where professors can easily deploy their content with an effective chatbot interface, and students can have fun while learning.</p>", "<p>Courses adapt to the student, that is supported and motivated by me.</p>"], "reply": [{"question": "Tell me more", "answer": "6f3f25b4-f85b-406b-b8fb-effbf52a4dfe"}]}, "6f3f25b4-f85b-406b-b8fb-effbf52a4dfe": {"says": ["<p>Professors can see realtime statistics of the progresses, collect feedback and effortlessly improve the course. </p>"], "reply": [{"question": "What about the technology ?", "answer": "feeffb91-af78-4ccc-b0db-de062ea67c5c"}]}, "feeffb91-af78-4ccc-b0db-de062ea67c5c": {"says": ["<p>My wording and the course structure can be easily tuned from an excel sheet, so that everyone can deliver their knowledge in the way they've ever dreamd.</p>", "<p>I can run in the browser, or be deployed in the cloud to scale up to millions of users.</p>", "<p>Are you interested ?</p>"], "reply": [{"question": "I want to see your available courses", "answer": "68e37546-6a12-429d-a70f-d0af4ca25905"}]}, "68e37546-6a12-429d-a70f-d0af4ca25905": {"says": ["<p>here you are a list:</p>"], "reply": []}, "3218fccb-7f3a-45f7-b8de-89c7ebb87b6b": {"says": ["<p>No, fuck your mother, motherfucker :P</p>"], "reply": [{"question": "Thanks :)", "answer": "375ce505-51c9-4bb0-9308-2951b06bc95e"}]}, "375ce505-51c9-4bb0-9308-2951b06bc95e": {"says": [], "reply": []}};
+   		// set up the chatbot script
+		var givemeBubbles = new Bubbles(
+		    document.getElementById('chat'), // attach chatbot to placeholder above ^^
+		    "givemeBubbles" // you need to pass the name of the constructor variable that evokes Bubble function here
+		);
+
+		// pass JSON to your function and you're done!
+		givemeBubbles.talk(convo);
+</script>

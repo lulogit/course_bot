@@ -1,9 +1,9 @@
 	<!-- stylesheets are conveniently separated into components -->
-        <link rel="stylesheet" href="<%= static_path(@conn, "/setup.css") %>">
-        <link rel="stylesheet" href="<%= static_path(@conn, "/says.css") %>">
-        <link rel="stylesheet" href="<%= static_path(@conn, "/reply.css") %>">
-        <link rel="stylesheet" href="<%= static_path(@conn, "/typing.css") %>">
-        <link rel="stylesheet" href="<%= static_path(@conn, "/input.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/setup.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/says.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/reply.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/typing.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/input.css") %>">
 	<style>
 	body {
 		background: #dcdde0;
@@ -27,7 +27,7 @@
 <div id="chat"></div>
 
 <!-- import the JavaScript file -->
-<script src="<%= static_path(@conn, "/Bubbles.js") %>"></script>
+<script src="<%= static_path(@conn, "/js/Bubbles.js") %>"></script>
 <script>
 
 

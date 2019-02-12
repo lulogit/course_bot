@@ -19,7 +19,7 @@
 
 <!-- container element for chat window -->
 <div id="chat"></div>
-<script src="<%= static_path(@conn, "/Bubbles.js") %>"></script>
+<script src="/Bubbles.js"></script>
 <script>
 
 // this is the most basic conversation JSON.

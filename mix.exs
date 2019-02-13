@@ -33,6 +33,7 @@ defmodule CourseBot.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      # phoenix stack
       {:phoenix, "~> 1.3.4"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
@@ -42,8 +43,15 @@ defmodule CourseBot.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
+      # deployment
       {:distillery, "~> 2.0"},
-      {:coherence, "~> 0.5.2"}
+      # auth
+      {:coherence, "~> 0.5.2"},
+      # botpiler
+      {:elixir_uuid, "~> 1.2" },
+      {:poison, "~> 3.0"},
+      {:earmark, "~> 1.3"},
+      {:html_sanitize_ex, "~> 1.3.0-rc3"}
     ]
   end
 

@@ -1,0 +1,5 @@
+<h2>Edit Bubble</h2>
+
+<%= render "form.html", Map.put(assigns, :action, bubble_path(@conn, :update, @bubble)) %>
+
+<span><%= link "Back", to: bubble_path(@conn, :index) %></span>

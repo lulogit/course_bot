@@ -23,7 +23,8 @@ defmodule CourseBotWeb.Endpoint do
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
-    pass: ["*/*"],
+    pass: ["text/plain"],
+    length: 10_000_000,
     json_decoder: Poison
 
   plug Plug.MethodOverride

@@ -1,0 +1,86 @@
+<span><%= link "Edit", to: bubble_path(@conn, :edit, @bubble) %></span>
+<span><%= link "Back", to: bubble_path(@conn, :index) %></span>
+<h2><%= @bubble.name %></h2>
+<!-- show bot as git map -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.15.1/gitgraph.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.15.1/gitgraph.min.css" />
+<canvas id="gitGraph"></canvas>
+<style>
+  body {
+    background: #dcdde0;
+  }
+  .bubble-container {
+    height: 100vh;
+  }
+  .say img {width: auto !important; height: 12em;}
+  div.bubble.say {width: -moz-fit-content !important;
+  width: -webkit-fit-content !important;
+  width: -ms-fit-content !important;
+  width: -o-fit-content !important;
+  width: fit-content !important;}
+  .bubble-container {background: #fff !important;}
+  div.bubble.say:not(.reply) {background: #f7f9fc; border: 1px solid #d2ddee;}
+  .bubble.reply .bubble-content span.bubble-button, .bubble.reply .bubble-content span.bubble-button.bubble-pick {background: #f7f9fc; border: 1px solid #d2ddee;color: #9768d1;}
+  .bubble.reply:not(.bubble-picked) .bubble-content span.bubble-button:hover {border: 1px solid #9768d1; font-weight: bold; background: ivory;}
+</style>
+
+<!-- container element for chat window -->
+<div id="chat"></div>
+<script src="/Bubbles.js"></script>
+<script>
+// this is the most basic conversation JSON.
+  var convo = <%= {:safe, @bubble.convo} %>;
+// set up the chatbot script
+var givemeBubbles = new Bubbles(
+  document.getElementById('chat'), // attach chatbot to placeholder above ^^
+  "givemeBubbles" // you need to pass the name of the constructor variable that evokes Bubble function here
+);
+// pass JSON to your function and you're done!
+givemeBubbles.talk(convo);
+
+// show as graph
+var gitgraph = new GitGraph({orientation: "horizontal", mode: "compact", template: {commit: {spacingY: -20}}});
+var main = gitgraph.branch("master");
+function show(state, branch, y,x){
+    if (state){
+        var j = 0;
+        var i = 0;
+        for (let text of state.says) {gitgraph.commit({
+          sha1: " ",
+          message: text,
+          color: "red",
+          x: (x+j)*20,
+          y: (y+i)*20,
+          author: " ",
+          onClick: function(commit) {
+            console.log("Oh, you clicked my commit?!", commit);
+          }
+        }); j++;
+        }
+        for (var b of state.reply.reverse()){
+            //branch.checkout();
+            var br = gitgraph.branch({
+              parentBranch: branch,
+              name: b.question,
+              column: y+i            // which column index it should be displayed in
+            });
+            gitgraph.commit({
+              sha1: " ",
+              message: b.question,
+              color: "black",
+              x: x+j,
+              y: y+i,
+              author: " ",
+              onClick: function(commit) {
+                console.log("Oh, you clicked my commit?!", commit);
+              }
+            });
+            //var br = gitgraph.branch(b.question);
+            show(convo[b.answer], br, y+i,0);
+            i++;
+        }
+    }
+}
+show(convo.ice, main, 0, 0);
+</script>
+

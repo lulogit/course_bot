@@ -38,6 +38,7 @@ defmodule CourseBotWeb.Router do
   scope "/", CourseBotWeb do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
+    resources "/bubbles", BubbleController
   end
 
   scope "/", CourseBotWeb do

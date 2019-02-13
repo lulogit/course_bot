@@ -1,0 +1,26 @@
+<h2>Listing Bubbles</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bubble <- @bubbles do %>
+    <tr>
+      <td><%= bubble.name %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: bubble_path(@conn, :show, bubble), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: bubble_path(@conn, :edit, bubble), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: bubble_path(@conn, :delete, bubble), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Bubble", to: bubble_path(@conn, :new) %></span>

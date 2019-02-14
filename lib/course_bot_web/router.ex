@@ -26,7 +26,7 @@ defmodule CourseBotWeb.Router do
 
   scope "/" do
     pipe_through :browser
-    coherence_routes()
+    #coherence_routes()
   end
 
   scope "/" do
@@ -38,12 +38,12 @@ defmodule CourseBotWeb.Router do
   scope "/", CourseBotWeb do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
-    resources "/bubbles", BubbleController
   end
 
   scope "/", CourseBotWeb do
     pipe_through :protected
     resources "/bots", BotController
+    resources "/bubbles", BubbleController
   end
 
   # Other scopes may use custom stacks.

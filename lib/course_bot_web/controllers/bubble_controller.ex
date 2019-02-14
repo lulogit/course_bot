@@ -3,7 +3,7 @@ defmodule CourseBotWeb.BubbleController do
 
   alias CourseBot.Bubbles
   alias CourseBot.Bubbles.Bubble
-  alias Coursebot.Botpiler
+  alias CourseBot.Botpiler
 
   def index(conn, _params) do
     bubbles = Bubbles.list_bubbles()

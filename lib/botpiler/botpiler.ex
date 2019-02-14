@@ -2,7 +2,7 @@ defmodule Bstruct do
   defstruct convo: nil, convs: nil, curr_state: nil, curr_says: nil, curr_conv: nil, curr_conv_states: nil
 end
 
-defmodule Coursebot.Botpiler do
+defmodule CourseBot.Botpiler do
   import Earmark, only: [as_html!: 1]
   import Poison, only: [encode!: 1]
   import UUID, only: [uuid4: 0]

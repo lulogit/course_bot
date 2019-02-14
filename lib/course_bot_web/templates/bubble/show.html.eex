@@ -18,7 +18,8 @@
   width: -ms-fit-content !important;
   width: -o-fit-content !important;
   width: fit-content !important;}
-  .bubble-container {background: #fff !important;}
+  .bubble-container {background: url('https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.desktopwallpapers4.me%2Fwallpapers%2Fabstract%2F1920x1080%2F3%2F25288-orange-bubbles-1920x1080-abstract-wallpaper.jpg&f=1');
+background-size: cover; } /*background: #fff !important;}*/
   div.bubble.say:not(.reply) {background: #f7f9fc; border: 1px solid #d2ddee;}
   .bubble.reply .bubble-content span.bubble-button, .bubble.reply .bubble-content span.bubble-button.bubble-pick {background: #f7f9fc; border: 1px solid #d2ddee;color: #9768d1;}
   .bubble.reply:not(.bubble-picked) .bubble-content span.bubble-button:hover {border: 1px solid #9768d1; font-weight: bold; background: ivory;}

@@ -41,6 +41,8 @@ b: here you are a list:
 
 [fuck you]
 #main/1
-u: Fuck you !
-b: No, fuck your mother, motherfucker :P
-u: Thanks :)
+u: why should I ?
+b: Professors can see realtime statistics of the progresses, collect feedback and effortlessly improve the course. 
+u: Still no.
+b: Ok, see you around :)
+u: Bye !
